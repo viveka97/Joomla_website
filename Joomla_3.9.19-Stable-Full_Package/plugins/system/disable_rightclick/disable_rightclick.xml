@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system" method="upgrade">
+<name>System - Disable Right Click</name>
+<author>Glimlag.gr</author>
+<creationDate>December 2015</creationDate>
+<copyright>Copyright (C) 2007-2015 Glimlag.gr</copyright>
+<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+<authorEmail>info@glimlag.gr</authorEmail>
+<authorUrl>www.glimlag.gr</authorUrl>
+<version>1.1</version>
+<description>With this plugin you can disable right click and/or show popup with custom message, restrict it to specific groups and disable select and copy </description>
+<files>
+	<filename plugin="disable_rightclick">disable_rightclick.php</filename>
+	<filename>index.html</filename>
+</files>
+<languages folder="language">
+	<language tag="en-GB">en-GB/en-GB.plg_system_disable_rightclick.ini</language>
+</languages>
+<config>
+	<fields name="params">
+	<fieldset name="basic">
+		<field name="groups" type="usergroup" multiple="true" label="USER_GROUP_LABEL" description="USER_GROUP_DESC" />
+		<field name="disable_copy" type="list" default="0" label="SELECT_AND_COPY_LABEL" description="SELECT_AND_COPY_DESC">
+			<option value="0">OPTION_NO</option>
+			<option value="1">OPTION_YES</option>
+		</field>
+				<field name="disable_rightclick" type="list" default="0" label="RIGHTCLICK_DISABLE" description="RIGHTCLICK_DISABLE_DESC">
+					<option value="0">OPTION_NO</option>
+					<option value="1">OPTION_YES</option>
+					<option value="2">OPTION_IMAGES_ONLY</option>
+				</field>
+		<field name="show_popup" type="list" default="0" label="SHOW_POPUP" description="SHOW_POPUP_DESC">
+			<option value="0">OPTION_NO</option>
+			<option value="1">OPTION_YES</option>
+		</field>
+		<field name="popup_title" type="text" size="50" default="Right Click" label="POPUP_TITLE" description="POPUP_TITLE_DESC" />
+		<field name="popup_message" type="textarea" size="50" default="No right click" label="POPUP_MESSAGE" description="POPUP_MESSAGE_DESC" filter="raw"/>
+				
+	</fieldset>
+	</fields>
+</config>
+</extension>
